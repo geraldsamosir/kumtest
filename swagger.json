@@ -1,0 +1,466 @@
+{
+  "consumes": [
+    "aplication/json"
+  ],
+  "produces": [
+    "aplication/json"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "title": "The purpose of this application for asigment test from kumparan.",
+    "contact": {
+      "name": "Gerald Halomoan Samosir",
+      "email": "geralddeveloper95@gmail.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    },
+    "version": "0.0.1"
+  },
+  "host": "localhost:5000",
+  "paths": {
+    "/images/{filename}": {
+      "get": {
+        "description": "This will show all recorded people.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "schemes": [
+          "http",
+          "https"
+        ],
+        "tags": [
+          "News"
+        ],
+        "summary": "getbanner.",
+        "operationId": "getbanner",
+        "parameters": [
+          {
+            "type": "string",
+            "x-go-name": "Filename",
+            "name": "filename",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/news": {
+      "get": {
+        "description": "This will show all recorded people.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "schemes": [
+          "http",
+          "https"
+        ],
+        "tags": [
+          "News"
+        ],
+        "summary": "Lists all news.",
+        "operationId": "ListNews",
+        "parameters": [
+          {
+            "type": "integer",
+            "format": "int64",
+            "x-go-name": "ID",
+            "name": "id",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "x-go-name": "Title",
+            "name": "title",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "x-go-name": "Is_draf",
+            "name": "is_draf",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "x-go-name": "Is_publish",
+            "name": "is_publish",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {}
+        }
+      },
+      "put": {
+        "description": "This will show all recorded people.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "schemes": [
+          "http",
+          "https"
+        ],
+        "tags": [
+          "News"
+        ],
+        "summary": "update news.",
+        "operationId": "updatenews",
+        "parameters": [
+          {
+            "type": "integer",
+            "format": "int64",
+            "x-go-name": "ID",
+            "name": "id",
+            "in": "query"
+          },
+          {
+            "description": "description: \njson format to send\n{\n\"title\": \"title\",\n\"body\": \"lorem ipsum\",\n\"banner\": \"banner.png\",\n\"datePublish\": \"2018-07-27T17:58:39Z\",\n\"is_draf\": true,\n\"is_publish\": false,\n\"Topics\": [{\n\"topic_name\":\"coba\"\n}]\n}\ntopics it's optional for create with new topics\nnote add topics thats mean to create new topics",
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {}
+        }
+      },
+      "post": {
+        "description": "This will show all recorded people.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "schemes": [
+          "http",
+          "https"
+        ],
+        "tags": [
+          "News"
+        ],
+        "summary": "create news.",
+        "operationId": "createnews",
+        "parameters": [
+          {
+            "description": "description: \njson format to send\n{\n\"title\": \"title\",\n\"body\": \"lorem ipsum\",\n\"banner\": \"banner.png\",\n\"datePublish\": \"2018-07-27T17:58:39Z\",\n\"is_draf\": true,\n\"is_publish\": false,\n\"Topics\": [{\n\"topic_name\":\"coba\"\n}]\n}\ntopics it's optional for create with new topics",
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {}
+        }
+      },
+      "delete": {
+        "description": "This will show all recorded people.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "schemes": [
+          "http",
+          "https"
+        ],
+        "tags": [
+          "News"
+        ],
+        "summary": "delete news.",
+        "operationId": "delete",
+        "parameters": [
+          {
+            "type": "integer",
+            "format": "int64",
+            "x-go-name": "ID",
+            "name": "id",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/news/deleted": {
+      "get": {
+        "description": "This will show all recorded people.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "schemes": [
+          "http",
+          "https"
+        ],
+        "tags": [
+          "News"
+        ],
+        "summary": "Lists all Deleted news.",
+        "operationId": "ListDeletedNews",
+        "parameters": [
+          {
+            "type": "integer",
+            "format": "int64",
+            "x-go-name": "ID",
+            "name": "id",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "x-go-name": "Title",
+            "name": "title",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "x-go-name": "Is_draf",
+            "name": "is_draf",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "x-go-name": "Is_publish",
+            "name": "is_publish",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/news/topic": {
+      "get": {
+        "description": "This will show all recorded people.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "schemes": [
+          "http",
+          "https"
+        ],
+        "tags": [
+          "News"
+        ],
+        "summary": "Lists all  news. by topics",
+        "operationId": "ListtopicNews",
+        "parameters": [
+          {
+            "type": "integer",
+            "format": "int64",
+            "x-go-name": "ID",
+            "description": "id topics",
+            "name": "id",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/news/uploadbanner": {
+      "post": {
+        "description": "This will show all recorded people.",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "schemes": [
+          "http",
+          "https"
+        ],
+        "tags": [
+          "News"
+        ],
+        "summary": "uploadbanner.",
+        "operationId": "uploadbanner",
+        "parameters": [
+          {
+            "type": "file",
+            "x-go-name": "Banner",
+            "name": "banner",
+            "in": "formData"
+          }
+        ],
+        "responses": {
+          "201": {}
+        }
+      }
+    },
+    "/topics": {
+      "get": {
+        "description": "This will show all recorded ListTopics.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "schemes": [
+          "http",
+          "https"
+        ],
+        "tags": [
+          "Topic"
+        ],
+        "summary": "Lists all ListTopics.",
+        "operationId": "ListTopics",
+        "parameters": [
+          {
+            "type": "integer",
+            "format": "int64",
+            "x-go-name": "ID",
+            "name": "id",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "x-go-name": "Topic_name",
+            "name": "topic_name",
+            "in": "query"
+          },
+          {
+            "type": "integer",
+            "format": "int64",
+            "x-go-name": "Parent_id",
+            "name": "parent_id",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {}
+        }
+      },
+      "put": {
+        "description": "This will show all recorded people.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "schemes": [
+          "http",
+          "https"
+        ],
+        "tags": [
+          "Topic"
+        ],
+        "summary": "update Topic.",
+        "operationId": "updateTopic",
+        "parameters": [
+          {
+            "type": "integer",
+            "format": "int64",
+            "x-go-name": "ID",
+            "name": "id",
+            "in": "query"
+          },
+          {
+            "description": "description: \njson format to send\n{\n\"Topic_name\":\"baru\",\n\"Parent_id\":1\n\n}\ntopics it's optional for create with new topics\nnote add topics thats mean to create new topics",
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {}
+        }
+      },
+      "post": {
+        "description": "This will show all recorded people.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "schemes": [
+          "http",
+          "https"
+        ],
+        "tags": [
+          "Topic"
+        ],
+        "summary": "create Topic.",
+        "operationId": "NewTopic",
+        "parameters": [
+          {
+            "description": "description: \njson format to send\n{\n\"Topic_name\": \"asd baru\",\n\"Parent_id\":1\n}\nparent it's optional for create with new topics",
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {}
+        }
+      },
+      "delete": {
+        "description": "This will show all recorded people.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "schemes": [
+          "http",
+          "https"
+        ],
+        "tags": [
+          "Topic"
+        ],
+        "summary": "delete Topic.",
+        "operationId": "deleteTopic",
+        "parameters": [
+          {
+            "type": "integer",
+            "format": "int64",
+            "x-go-name": "ID",
+            "name": "id",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    }
+  }
+}
